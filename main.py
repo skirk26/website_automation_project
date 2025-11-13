@@ -4,6 +4,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
+from datetime import datetime
 chrome_options = Options()
 chrome_options.add_experimental_option("prefs", {
     "credentials_enable_service": False,
@@ -44,6 +45,13 @@ send_keys('postal-code', '123456')
 check_presence('continue')
 click("continue")
 item_total = wait.until(EC.presence_of_element_located((By.CLASS_NAME, "summary_subtotal_label")))
+tax_total = wait.until(EC.presence_of_element_located((By.CLASS_NAME, "summary_tax_label")))
+total_total = wait.until(EC.presence_of_element_located((By.CLASS_NAME, "summary_total_label")))
+date = datetime.now()
 print(item_total.text)
+print(tax_total.text)
+print("-"*25)
+print(total_total.text)
+print('Checked out:',date.strftime("%A, %B %d, %y  %I:%M"))
 driver.quit()
 
