@@ -1,1 +1,1 @@
-# website_automation_project
+# This project is a Python automation script that uses Selenium WebDriver to perform a full checkout flow on the SauceDemo website. It automatically logs in with test credentials, adds two products to the shopping cart, proceeds through the checkout process, fills in user information, and retrieves the order summary totals (item total, tax, and final total). The script uses explicit waits for reliability and prints the checkout totals along with a timestamp before closing the browser.
